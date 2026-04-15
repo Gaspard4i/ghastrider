@@ -8,11 +8,13 @@
         "${mod_author}"
     ],
     "contact": {
-        "sources": "https://github.com/gaspard/happy-ghast-dash"
+        "homepage": "https://github.com/Gaspard4i/happy-ghast-dash",
+        "sources": "https://github.com/Gaspard4i/happy-ghast-dash",
+        "issues": "https://github.com/Gaspard4i/happy-ghast-dash/issues"
     },
     "license": "${license}",
     "icon": "${mod_id}.png",
-    "environment": "*",
+    "environment": "client",
     "entrypoints": {
         "main": [
             "dev.gaspard.ghastdash.ExampleMod"

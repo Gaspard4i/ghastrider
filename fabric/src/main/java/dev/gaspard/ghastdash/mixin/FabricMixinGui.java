@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(Gui.class)
-public class MixinGui {
+public class FabricMixinGui {
 
     @Shadow
     @Final

@@ -35,8 +35,13 @@ public class DashBarRenderer implements ContextualBarRenderer {
         DashState dashState = DashHandler.getState();
 
         if (dashState.isOnCooldown()) {
-            // Cooldown: use the vanilla cooldown sprite (grey bar)
-            graphics.blitSprite(RenderPipelines.GUI_TEXTURED, DASH_BAR_COOLDOWN_SPRITE, left, top, WIDTH, HEIGHT);
+            // Cooldown: bar starts at the charge level reached, then shrinks down
+            float maxRatio = dashState.getCooldownMaxRatio();
+            float cooldownProgress = dashState.getCooldownProgress();
+            int cooldownWidth = (int) (WIDTH * maxRatio * cooldownProgress);
+            if (cooldownWidth > 0) {
+                graphics.blitSprite(RenderPipelines.GUI_TEXTURED, DASH_BAR_PROGRESS_SPRITE, WIDTH, HEIGHT, 0, 0, left, top, cooldownWidth, HEIGHT);
+            }
         } else if (dashState.isCharging()) {
             // Charging: use the vanilla progress sprite, sized to charge progress
             float progress = dashState.getChargeProgress();

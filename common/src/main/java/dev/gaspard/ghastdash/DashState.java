@@ -9,6 +9,8 @@ public class DashState {
     private boolean charging;
     private float chargeTicks;
     private int cooldownTicks;
+    private int cooldownMax;
+    private boolean decaying;
 
     public void startCharging() {
         if (cooldownTicks <= 0 && !charging) {
@@ -19,7 +21,15 @@ public class DashState {
 
     public void tick() {
         if (charging) {
-            chargeTicks = Math.min(chargeTicks + 1, Constants.MAX_CHARGE_TICKS);
+            if (!decaying) {
+                chargeTicks = Math.min(chargeTicks + 1, Constants.MAX_CHARGE_TICKS);
+                if (chargeTicks >= Constants.MAX_CHARGE_TICKS) {
+                    decaying = true;
+                }
+            } else {
+                float minTicks = Constants.MAX_CHARGE_TICKS * Constants.OVERCHARGE_MIN;
+                chargeTicks = Math.max(chargeTicks - Constants.OVERCHARGE_DECAY_RATE, minTicks);
+            }
         }
         if (cooldownTicks > 0) {
             cooldownTicks--;
@@ -33,16 +43,20 @@ public class DashState {
     public float release() {
         if (!charging) return -1f;
         charging = false;
+        decaying = false;
         float power = chargeTicks / Constants.MAX_CHARGE_TICKS;
+        cooldownMax = (int) (Constants.DASH_COOLDOWN_TICKS * power);
+        cooldownTicks = cooldownMax;
         chargeTicks = 0;
-        cooldownTicks = Constants.DASH_COOLDOWN_TICKS;
         return power;
     }
 
     public void reset() {
         charging = false;
+        decaying = false;
         chargeTicks = 0;
         cooldownTicks = 0;
+        cooldownMax = 0;
     }
 
     public boolean isCharging() {
@@ -58,6 +72,11 @@ public class DashState {
     }
 
     public float getCooldownProgress() {
-        return (float) cooldownTicks / Constants.DASH_COOLDOWN_TICKS;
+        if (cooldownMax <= 0) return 0f;
+        return (float) cooldownTicks / cooldownMax;
+    }
+
+    public float getCooldownMaxRatio() {
+        return (float) cooldownMax / Constants.DASH_COOLDOWN_TICKS;
     }
 }

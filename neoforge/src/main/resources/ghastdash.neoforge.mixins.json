@@ -4,7 +4,9 @@
   "package": "dev.gaspard.ghastdash.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
-  "client": [],
+  "client": [
+    "NeoForgeMixinGui"
+  ],
   "server": [],
   "injectors": {
     "defaultRequire": 1

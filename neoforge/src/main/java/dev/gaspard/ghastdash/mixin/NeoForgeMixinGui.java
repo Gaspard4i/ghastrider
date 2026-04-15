@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(Gui.class)
-public class MixinGui {
+public class NeoForgeMixinGui {
 
     @Shadow
     @Final
@@ -25,7 +25,7 @@ public class MixinGui {
     private DashBarRenderer ghastdash$dashBarRenderer;
 
     @Redirect(
-            method = "extractHotbarAndDecorations",
+            method = "extractContextualInfoBarBackground",
             at = @At(value = "INVOKE",
                     target = "Lnet/minecraft/client/gui/contextualbar/ContextualBarRenderer;extractBackground(Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/client/DeltaTracker;)V")
     )
@@ -39,7 +39,7 @@ public class MixinGui {
     }
 
     @Redirect(
-            method = "extractHotbarAndDecorations",
+            method = "extractContextualInfoBar",
             at = @At(value = "INVOKE",
                     target = "Lnet/minecraft/client/gui/contextualbar/ContextualBarRenderer;extractRenderState(Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/client/DeltaTracker;)V")
     )

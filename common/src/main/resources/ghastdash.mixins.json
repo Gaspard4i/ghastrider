@@ -6,8 +6,7 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
   "client": [
-    "MixinMinecraft",
-    "MixinGui"
+    "MixinMinecraft"
   ],
   "server": [],
   "injectors": {
