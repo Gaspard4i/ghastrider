@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="https://img.shields.io/github/v/release/Gaspard4i/happy-ghast-dash?style=for-the-badge&logo=github&color=181717" alt="GitHub Release">
-  <img src="https://img.shields.io/github/license/Gaspard4i/happy-ghast-dash?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/github/v/release/Gaspard4i/ghastrider?style=for-the-badge&logo=github&color=181717" alt="GitHub Release">
+  <img src="https://img.shields.io/github/license/Gaspard4i/ghastrider?style=for-the-badge" alt="License">
   <img src="https://img.shields.io/badge/Minecraft-26.1.2-62B47A?style=for-the-badge&logo=mojangstudios" alt="Minecraft Version">
   <img src="https://img.shields.io/badge/Fabric-Supported-DBB06E?style=for-the-badge" alt="Fabric">
   <img src="https://img.shields.io/badge/NeoForge-Supported-E04E14?style=for-the-badge" alt="NeoForge">
 </p>
 
-<h1 align="center">Happy Ghast Dash</h1>
+<h1 align="center">GhastRider</h1>
 
 <p align="center">
   <strong>A charge-and-dash mechanic for the Happy Ghast mount in Minecraft.</strong>
@@ -39,7 +39,7 @@
 
 | Platform | Link |
 |----------|------|
-| GitHub Releases | [Latest Release](https://github.com/Gaspard4i/happy-ghast-dash/releases/latest) |
+| GitHub Releases | [Latest Release](https://github.com/Gaspard4i/ghastrider/releases/latest) |
 | Modrinth | *Coming soon* |
 | CurseForge | *Coming soon* |
 
@@ -47,7 +47,7 @@
 
 1. Install [Fabric Loader](https://fabricmc.net/) **or** [NeoForge](https://neoforged.net/) for Minecraft 26.1.2
 2. For Fabric: also install [Fabric API](https://modrinth.com/mod/fabric-api)
-3. Download the correct JAR for your loader from [Releases](https://github.com/Gaspard4i/happy-ghast-dash/releases)
+3. Download the correct JAR for your loader from [Releases](https://github.com/Gaspard4i/ghastrider/releases)
 4. Place the JAR in your `mods/` folder
 5. Launch the game
 
@@ -64,14 +64,14 @@
 Requires **Java 25**.
 
 ```bash
-git clone https://github.com/Gaspard4i/happy-ghast-dash.git
-cd happy-ghast-dash
+git clone https://github.com/Gaspard4i/ghastrider.git
+cd ghastrider
 ./gradlew build
 ```
 
 Output JARs:
-- `fabric/build/libs/ghastdash-fabric-*.jar`
-- `neoforge/build/libs/ghastdash-neoforge-*.jar`
+- `fabric/build/libs/ghastrider-fabric-*.jar`
+- `neoforge/build/libs/ghastrider-neoforge-*.jar`
 
 ## Development
 
@@ -88,10 +88,10 @@ Output JARs:
 Create a **Superflat Creative** world with cheats enabled, then:
 
 ```
-/function ghastdash:test_ride
+/function ghastrider:debug
 ```
 
-This spawns a harnessed Happy Ghast and mounts you on it.
+This sets up a peaceful environment, spawns an invulnerable Happy Ghast, and gives you all test items (harness, ice, snowballs).
 
 ## Project Structure
 
@@ -105,7 +105,7 @@ Built with [MultiLoader-Template](https://github.com/jaredlll08/MultiLoader-Temp
 
 ## Contributing
 
-Issues and pull requests are welcome! Please use the [issue templates](https://github.com/Gaspard4i/happy-ghast-dash/issues/new/choose) when reporting bugs or suggesting features.
+Issues and pull requests are welcome! Please use the [issue templates](https://github.com/Gaspard4i/ghastrider/issues/new/choose) when reporting bugs or suggesting features.
 
 ## License
 

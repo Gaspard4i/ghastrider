@@ -8,19 +8,19 @@
         "${mod_author}"
     ],
     "contact": {
-        "homepage": "https://github.com/Gaspard4i/happy-ghast-dash",
-        "sources": "https://github.com/Gaspard4i/happy-ghast-dash",
-        "issues": "https://github.com/Gaspard4i/happy-ghast-dash/issues"
+        "homepage": "https://github.com/Gaspard4i/ghastrider",
+        "sources": "https://github.com/Gaspard4i/ghastrider",
+        "issues": "https://github.com/Gaspard4i/ghastrider/issues"
     },
     "license": "${license}",
     "icon": "${mod_id}.png",
     "environment": "client",
     "entrypoints": {
         "main": [
-            "dev.gaspard.ghastdash.ExampleMod"
+            "dev.gaspard.ghastrider.ExampleMod"
         ],
         "client": [
-            "dev.gaspard.ghastdash.FabricClientMod"
+            "dev.gaspard.ghastrider.FabricClientMod"
         ]
     },
     "mixins": [

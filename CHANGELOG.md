@@ -13,5 +13,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 - Overcharge decay — holding past max charge gradually reduces power
 - Vertical boost during dash to maintain altitude
 - Fabric and NeoForge support (Minecraft 26.1.2)
-- In-game test functions (`ghastdash:test_ride`, `ghastdash:test_setup`)
+- In-game test functions (`ghastrider:test_ride`, `ghastrider:test_setup`)
 - English and French translations

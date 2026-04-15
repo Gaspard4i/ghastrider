@@ -33,7 +33,7 @@ jobs:
           github-tag: ${{ github.ref_name }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           files: fabric/build/libs/!(*-sources|*-dev).jar
-          name: "Happy Ghast Dash ${{ github.ref_name }} (Fabric)"
+          name: "GhastRider ${{ github.ref_name }} (Fabric)"
           loaders: fabric
           game-versions: 26.1.2
           dependencies: fabric-api(required)
@@ -49,7 +49,7 @@ jobs:
           github-tag: ${{ github.ref_name }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           files: neoforge/build/libs/!(*-sources|*-dev).jar
-          name: "Happy Ghast Dash ${{ github.ref_name }} (NeoForge)"
+          name: "GhastRider ${{ github.ref_name }} (NeoForge)"
           loaders: neoforge
           game-versions: 26.1.2
           changelog-file: CHANGELOG.md

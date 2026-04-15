@@ -26,11 +26,11 @@ jobs:
       - name: Upload Fabric JAR
         uses: actions/upload-artifact@v4
         with:
-          name: ghastdash-fabric
+          name: ghastrider-fabric
           path: fabric/build/libs/!(*-sources|*-dev).jar
 
       - name: Upload NeoForge JAR
         uses: actions/upload-artifact@v4
         with:
-          name: ghastdash-neoforge
+          name: ghastrider-neoforge
           path: neoforge/build/libs/!(*-sources|*-dev).jar
