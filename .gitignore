@@ -25,3 +25,6 @@ runs
 
 # Extracted MC sources (dev debug)
 /net/
+
+# Claude Code
+CLAUDE.md
