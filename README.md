@@ -5,6 +5,9 @@
   <img src="https://img.shields.io/badge/Minecraft-26.1.2-62B47A?style=for-the-badge&logo=mojangstudios" alt="Minecraft Version">
   <img src="https://img.shields.io/badge/Fabric-Supported-DBB06E?style=for-the-badge" alt="Fabric">
   <img src="https://img.shields.io/badge/NeoForge-Supported-E04E14?style=for-the-badge" alt="NeoForge">
+  <a href="https://gaspard4i.github.io/wiki/minecraft/ghastrider">
+    <img src="https://img.shields.io/badge/Wiki-Documentation-4A90D9?style=for-the-badge&logo=bookstack&logoColor=white" alt="Wiki">
+  </a>
 </p>
 
 <h1 align="center">GhastRider</h1>
@@ -52,6 +55,10 @@
 > **Tip:** Releasing at 80%+ charge gives the best boost. But don't hold too long — the charge decays after hitting the max!
 
 Feed ice to your Happy Ghast by right-clicking with ice items for temporary speed boosts. Stack the duration by feeding multiple times!
+
+## Documentation
+
+Full documentation is available on the **[GhastRider Wiki](https://gaspard4i.github.io/wiki/minecraft/ghastrider)** — including dash mechanic details, ice feeding tables, installation guide, commands reference, and changelog.
 
 ## Downloads
 
