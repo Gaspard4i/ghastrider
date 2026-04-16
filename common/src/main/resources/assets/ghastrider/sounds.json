@@ -1,0 +1,26 @@
+{
+    "dash": {
+        "subtitle": "subtitles.ghastrider.dash",
+        "sounds": [
+            "ghastrider:dash"
+        ]
+    },
+    "charge_ready": {
+        "subtitle": "subtitles.ghastrider.charge_ready",
+        "sounds": [
+            "ghastrider:charge_ready"
+        ]
+    },
+    "ice_feed": {
+        "subtitle": "subtitles.ghastrider.ice_feed",
+        "sounds": [
+            "ghastrider:ice_feed"
+        ]
+    },
+    "ghast_happy": {
+        "subtitle": "subtitles.ghastrider.ghast_happy",
+        "sounds": [
+            "ghastrider:ghast_happy"
+        ]
+    }
+}
