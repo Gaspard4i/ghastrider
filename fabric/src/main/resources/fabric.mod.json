@@ -10,7 +10,8 @@
     "contact": {
         "homepage": "https://github.com/Gaspard4i/ghastrider",
         "sources": "https://github.com/Gaspard4i/ghastrider",
-        "issues": "https://github.com/Gaspard4i/ghastrider/issues"
+        "issues": "https://github.com/Gaspard4i/ghastrider/issues",
+        "wiki": "https://github.com/Gaspard4i/ghastrider#readme"
     },
     "license": "${license}",
     "icon": "${mod_id}.png",

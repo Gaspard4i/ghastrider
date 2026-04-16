@@ -1,5 +1,6 @@
 package dev.gaspard.ghastrider.client;
 
+import dev.gaspard.ghastrider.Constants;
 import dev.gaspard.ghastrider.DashState;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
@@ -43,14 +44,12 @@ public class DashBarRenderer implements ContextualBarRenderer {
                 graphics.blitSprite(RenderPipelines.GUI_TEXTURED, DASH_BAR_PROGRESS_SPRITE, WIDTH, HEIGHT, 0, 0, left, top, cooldownWidth, HEIGHT);
             }
         } else if (dashState.isCharging()) {
-            // Charging: use the vanilla progress sprite, sized to charge progress
             float progress = dashState.getChargeProgress();
             int progressWidth = (int) (WIDTH * progress);
             if (progressWidth > 0) {
                 graphics.blitSprite(RenderPipelines.GUI_TEXTURED, DASH_BAR_PROGRESS_SPRITE, WIDTH, HEIGHT, 0, 0, left, top, progressWidth, HEIGHT);
             }
         }
-        // When ready (not charging, not on cooldown): show empty bar (background only)
     }
 
     @Override

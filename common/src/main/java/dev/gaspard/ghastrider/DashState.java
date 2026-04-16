@@ -45,9 +45,13 @@ public class DashState {
         charging = false;
         decaying = false;
         float power = chargeTicks / Constants.MAX_CHARGE_TICKS;
+        chargeTicks = 0;
+        if (power < Constants.MIN_CHARGE_THRESHOLD) {
+            // Not enough charge — cancel without dashing or cooldown
+            return -1f;
+        }
         cooldownMax = (int) (Constants.DASH_COOLDOWN_TICKS * power);
         cooldownTicks = cooldownMax;
-        chargeTicks = 0;
         return power;
     }
 

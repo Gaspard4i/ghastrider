@@ -11,26 +11,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: gradle/actions/wrapper-validation@v4
 
       - uses: actions/setup-java@v4
         with:
           java-version: '25'
           distribution: 'temurin'
 
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: ${{ github.ref != 'refs/heads/main' }}
 
       - name: Build
-        run: ./gradlew build
+        run: ./gradlew build --stacktrace --parallel
 
       - name: Upload Fabric JAR
         uses: actions/upload-artifact@v4
+        if: success()
         with:
           name: ghastrider-fabric
-          path: fabric/build/libs/!(*-sources|*-dev).jar
+          path: fabric/build/libs/!(*-sources|*-javadoc).jar
 
       - name: Upload NeoForge JAR
         uses: actions/upload-artifact@v4
+        if: success()
         with:
           name: ghastrider-neoforge
-          path: neoforge/build/libs/!(*-sources|*-dev).jar
+          path: neoforge/build/libs/!(*-sources|*-javadoc).jar

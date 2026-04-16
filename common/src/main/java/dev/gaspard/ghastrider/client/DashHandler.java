@@ -19,6 +19,7 @@ public class DashHandler {
 
     private static final DashState state = new DashState();
     private static boolean wasDashKeyDown = false;
+    private static boolean wasOnCooldown = false;
     private static SoundInstance activeDashSound = null;
 
     public static DashState getState() {
@@ -37,10 +38,16 @@ public class DashHandler {
             return;
         }
 
+        boolean wasCooldown = state.isOnCooldown();
         state.tick();
 
         // Key just pressed
         if (dashKeyDown && !wasDashKeyDown) {
+            state.startCharging();
+        }
+
+        // Cooldown just ended while G is held — auto-start charging
+        if (dashKeyDown && wasCooldown && !state.isOnCooldown() && !state.isCharging()) {
             state.startCharging();
         }
 
@@ -81,13 +88,13 @@ public class DashHandler {
             activeDashSound = null;
         }
 
-        // Wind burst — short propulsion sound, volume and pitch scale with power
-        float volume = 0.6f + power * 0.4f;  // 0.6 to 1.0
-        float pitch = 0.8f + power * 0.4f;   // 0.8 to 1.2
+        // Wind whoosh — subtle, scales slightly with power
+        float volume = 0.10f + power * 0.05f;  // 0.10 to 0.15 (~15%)
+        float pitch = 0.7f + power * 0.3f;     // 0.7 to 1.0
 
         activeDashSound = new SimpleSoundInstance(
                 ModSounds.DASH.location(),
-                SoundSource.PLAYERS,
+                SoundSource.NEUTRAL,
                 volume,
                 pitch,
                 SoundInstance.createUnseededRandom(),
