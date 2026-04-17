@@ -39,18 +39,18 @@ public class DashState {
     /**
      * Releases the charge and returns the dash power (0.0 to 1.0).
      * Returns -1 if not charging.
+     * @param cooldownMultiplier ghast's effective cooldown factor (higher = shorter cooldown)
      */
-    public float release() {
+    public float release(float cooldownMultiplier) {
         if (!charging) return -1f;
         charging = false;
         decaying = false;
         float power = chargeTicks / Constants.MAX_CHARGE_TICKS;
         chargeTicks = 0;
         if (power < Constants.MIN_CHARGE_THRESHOLD) {
-            // Not enough charge — cancel without dashing or cooldown
             return -1f;
         }
-        cooldownMax = (int) (Constants.DASH_COOLDOWN_TICKS * power);
+        cooldownMax = (int) (Constants.DASH_COOLDOWN_TICKS * power / cooldownMultiplier);
         cooldownTicks = cooldownMax;
         return power;
     }

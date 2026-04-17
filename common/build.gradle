@@ -12,11 +12,17 @@ neoForge {
     }
 }
 
+repositories {
+    maven { url = "https://api.modrinth.com/maven" }
+}
+
 dependencies {
     compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
     // fabric and neoforge both bundle mixinextras, so it is safe to use it in common
     compileOnly group: 'io.github.llamalad7', name: 'mixinextras-common', version: '0.5.3'
     annotationProcessor group: 'io.github.llamalad7', name: 'mixinextras-common', version: '0.5.3'
+    // Jade (optional at runtime, compile-only for tooltip providers)
+    compileOnly "maven.modrinth:jade:26.0.10+neoforge"
 }
 
 configurations {

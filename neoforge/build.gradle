@@ -39,6 +39,15 @@ neoForge {
     }
 }
 
+repositories {
+    maven { url = "https://api.modrinth.com/maven" }
+}
+
+dependencies {
+    // Jade (optional at runtime)
+    compileOnly "maven.modrinth:jade:26.0.10+neoforge"
+}
+
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 // Implement mcgradleconventions loader attribute

@@ -18,4 +18,12 @@ public class Constants {
     public static final float OVERCHARGE_DECAY_RATE = 0.25f; // Ticks of charge lost per tick when held too long
     public static final float MIN_CHARGE_THRESHOLD = 1f / 9f; // Must charge at least 2 bars (2/18) to dash
     public static final float OVERCHARGE_MIN = MIN_CHARGE_THRESHOLD; // Decay stops at the same minimum
+
+    // Ghast individual stats
+    public static final float STAT_MIN = 0.5f;
+    public static final float STAT_MAX = 1.5f;
+    public static final float STAT_DEFAULT = 1.0f; // Neutral baseline for multiplier calculations
+    public static final float STAT_SPAWN_MEAN = 0.65f; // Spawn mean: most ghasts are slow
+    public static final float STAT_SPAWN_SIGMA = 0.1f; // Tight distribution: ~75% land between 0.55-0.75
+    public static final float SPEED_BOOST_PER_LEVEL = 0.15f;
 }

@@ -22,6 +22,9 @@
         ],
         "client": [
             "dev.gaspard.ghastrider.FabricClientMod"
+        ],
+        "jade": [
+            "dev.gaspard.ghastrider.compat.jade.GhastRiderJadePlugin"
         ]
     },
     "mixins": [
